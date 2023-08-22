@@ -1,0 +1,89 @@
+<nav class="pt-3 bg-gray-800 navbar navbar-expand-lg ">
+  <div class="container">
+    <a class="text-2xl font-bold text-white navbar-brand" href="/dashboard">{{auth.user.brandName}}</a>
+    <button class="text-white border-gray-100 navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <ion-icon name="menu-outline" class="border-white"></ion-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="mb-2 navbar-nav mb-lg-0 me-auto">
+        <li class="nav-item">
+          <a class="text-white nav-link active" aria-current="page" href="{{route('collection.index')}}">Collections</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link" href="{{route('product.index')}}">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link" href="{{route('product.low-stock')}}">Low stock products</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link" href="{{route('users.all')}}">Manage users</a>
+        </li>
+        {{-- <li class="nav-item dropdown">
+          <a class="text-white nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> --}}
+      </ul>
+
+
+      {{-- Navbar End --}}
+      <ul class="flex navbar-nav ms-auto me-3">
+        {{-- @if(auth.isLoggedIn) --}}
+        <form action="{{route('search.all', {term:'collection-product-items'})}}">
+          <div class="form-white input-group" style="width: 250px;">
+            <input class="text-white bg-gray-900 border-0 rounded form-input" type="search" name="name"
+              placeholder="Search product" required />
+          </div>
+        </form>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" width="30"
+              height="30" alt="" loading="lazy" />
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            {{--  <li>
+              <a class="dropdown-item" href="">
+                <span class="icon-text">
+                  <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                  </span>
+                  <span>Acount</span>
+                </span>
+              </a>
+            </li>  --}}
+            {{--  <li>
+              <hr class="dropdown-divider">
+            </li>  --}}
+            <li>
+              <form id="logout" action="/logout" method="post">
+                {{-- {{ csrfField() }} --}}
+            <li>
+              <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout').submit()">
+                <div class="flex flex-row justify-between align-middle">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                <p class="text-base ms-2">Logout</p>
+                </div>
+              </a>
+            </li>
+            </form>
+        </li>
+      </ul>
+      </li>
+      {{-- @else --}}
+      {{-- @endif --}}
+      </ul>
+    </div>
+  </div>
+</nav>
