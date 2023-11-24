@@ -1,5 +1,5 @@
 # Inventory_scan_dashbaord
-##### Developed as my final year project during university, this Inventory Management System (IMS) Dashboard is a robust solution designed for efficient stock management. Built using AdonisJS, TailwindCSS, and Bootstrap, the dashboard seamlessly integrates with a Flutter mobile app, providing a comprehensive toolset for managing inventory.
+Developed as my final year project during university, this Inventory Management System (IMS) Dashboard is a robust solution designed for efficient stock management. Built using AdonisJS, TailwindCSS, and Bootstrap, the dashboard seamlessly integrates with a Flutter mobile app (https://github.com/KwakuJoe/Inventory_scan_app), providing a comprehensive toolset for managing inventory.
 
 #### Setup
 ##### * Need to have node installed
